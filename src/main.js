@@ -3,6 +3,8 @@
 //Tarea cambiar los tipos de cambio a clase
 /* new tipoDeCambio (data) constructor()this etc              */ 
 
+/* Mi idea es crear la entidad cambio y simbolos por el momento */ 
+
 const $btnConsult = document.querySelector("#btn-consult");
 
 const $newConsultbtn = document.querySelector("#reset");
