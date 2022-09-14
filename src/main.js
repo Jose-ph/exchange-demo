@@ -1,5 +1,8 @@
 //Using https://exchangerate.host/#/docs
 
+//Tarea cambiar los tipos de cambio a clase
+/* new tipoDeCambio (data) constructor()this etc              */ 
+
 const $btnConsult = document.querySelector("#btn-consult");
 
 const $newConsultbtn = document.querySelector("#reset");
