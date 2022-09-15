@@ -3,6 +3,36 @@
 //Tarea cambiar los tipos de cambio a clase
 /* new tipoDeCambio (data) constructor()this etc              */ 
 
+/* Mi idea es crear la entidad cambio y simbolos por el momento */ 
+
+
+class ExchangeRate {
+
+  success;
+  historical;
+  base;
+  date;
+  rates;
+
+
+  constructor(success,historical,base,date,rates){
+
+    this.success=success;
+    this.historical=historical;
+    this.base = base;
+    this.date = date;
+    this.rates=rates;
+
+
+  }
+
+}
+
+
+
+
+
+
 const $btnConsult = document.querySelector("#btn-consult");
 
 const $newConsultbtn = document.querySelector("#reset");
@@ -42,12 +72,32 @@ function validateForm(e) {
 
 $newConsultbtn.onclick = reset;
 
+// function getExchangeByBaseAndDate(base, date) {
+//   fetch(`https://api.exchangerate.host/${date}?base=${base}`)
+//     .then((response) => response.json())
+
+//     .then((response) => {
+//       handleRates(response.rates);
+//     })
+
+//     .catch((error) =>{
+
+//       console.error("There was a problem", error)
+
+
+//      } );
+// }
+
+
 function getExchangeByBaseAndDate(base, date) {
   fetch(`https://api.exchangerate.host/${date}?base=${base}`)
     .then((response) => response.json())
 
     .then((response) => {
-      handleRates(response.rates);
+
+      let exchange = new ExchangeRate(response.success,response.historical,response.base,response.date,response.rates)
+
+      handleRates(exchange.rates);
     })
 
     .catch((error) =>{
@@ -57,6 +107,7 @@ function getExchangeByBaseAndDate(base, date) {
 
      } );
 }
+
 
 
 function handleRates(rates) {
