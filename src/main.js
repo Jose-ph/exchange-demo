@@ -95,7 +95,7 @@ function getExchangeByBaseAndDate(base, date) {
 
     .then((response) => {
 
-      let exchange = new ExchangeRate(response)
+      let exchange = new ExchangeRate(response.success,response.historical,response.base,response.date,response.rates)
 
       handleRates(exchange.rates);
     })
